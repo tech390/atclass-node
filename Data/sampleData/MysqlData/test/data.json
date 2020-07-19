@@ -1,0 +1,15 @@
+[
+    {
+        "ID": 24188,
+        "Name": "shaan",
+        "Role": "Associate Software Engineer",
+        "HasJob": true,
+        "PersonalDetails": {
+            "intrest": {
+                "Gym": true,
+                "Dance": true
+            },
+            "location": "Manish residency 162, Nizampet"
+        }
+    }
+]

@@ -1,0 +1,18 @@
+{
+    "settings": {
+        "index.max_result_window": 50000,
+        "index.mapping.total_fields.limit": 2000,
+        "number_of_shards": 5,
+        "number_of_replicas": 1,
+        "index.mapper.dynamic": false
+    },
+    "mappings": {
+        "groups": {
+            "properties": {
+                "age": {
+                    "type": "float"
+                }
+            }
+        }
+    }
+}

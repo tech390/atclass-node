@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/db/knex.js"],"names":["knexfile"],"mappings":";;;;;;AAAA;;IAAYA,Q;;AAEZ;;;;;;;;kBAEe,oBAAKA,QAAL,C","file":"knex.js","sourcesContent":["import * as knexfile from './knexfile';\r\n\r\nimport Knex from 'knex';\r\n\r\nexport default Knex(knexfile);\r\n"]}

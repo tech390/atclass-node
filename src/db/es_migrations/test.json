@@ -1,0 +1,894 @@
+{
+    "settings": {
+        "index.max_result_window": 50000,
+        "index.mapping.total_fields.limit": 2000,
+        "number_of_shards": 5,
+        "number_of_replicas": 1,
+        "index.mapper.dynamic": false
+    },
+    "mappings": {
+        "marketdashboard": {
+            "properties": {
+                "ABOccupancySpread": {
+                    "type": "float"
+                },
+                "ABRentSpreadGrowth_Unit": {
+                    "type": "float"
+                },
+                "ABRentSpreadRank_SqFt": {
+                    "type": "float"
+                },
+                "ACSMostRecentDate": {
+                    "type": "date"
+                },
+                "ACSReleaseDate": {
+                    "type": "date"
+                },
+                "Age20_34Growth": {
+                    "type": "float"
+                },
+                "Age20_34_Current": {
+                    "type": "float"
+                },
+                "Age60PlusGrowth": {
+                    "type": "float"
+                },
+                "Age60Plus_Current": {
+                    "type": "float"
+                },
+                "AnnualTotalPermits": {
+                    "type": "float"
+                },
+                "AverageRenterSizeGrowth": {
+                    "type": "float"
+                },
+                "AverageRenterSize_Current": {
+                    "type": "float"
+                },
+                "AvgCashflowROI": {
+                    "type": "float"
+                },
+                "AvgRentGainOverComps": {
+                    "type": "float"
+                },
+                "AvgValueROI": {
+                    "type": "float"
+                },
+                "BAPlusGrowth": {
+                    "type": "float"
+                },
+                "BAPlus_Current": {
+                    "type": "float"
+                },
+                "BlueCollarGrowth": {
+                    "type": "float"
+                },
+                "BlueCollar_Current": {
+                    "type": "float"
+                },
+                "BuiltLast5YearsCount_Operating": {
+                    "type": "integer"
+                },
+                "BuiltLast5YearsUnits_Operating": {
+                    "type": "integer"
+                },
+                "CapExMarketRank": {
+                    "type": "float"
+                },
+                "CapExPropertyCount": {
+                    "type": "integer"
+                },
+                "CapRate12moChange": {
+                    "type": "float"
+                },
+                "CapRate6moChange": {
+                    "type": "float"
+                },
+                "CapRateRank": {
+                    "type": "float"
+                },
+                "CapRate_12mo": {
+                    "type": "float"
+                },
+                "CapRate_6mo": {
+                    "type": "float"
+                },
+                "ClassAEffRentGrowth_Unit": {
+                    "type": "float"
+                },
+                "ClassAOccRank": {
+                    "type": "float"
+                },
+                "ClassAOccupancyGrowth": {
+                    "type": "float"
+                },
+                "ClassAOccupancyRate": {
+                    "type": "float"
+                },
+                "ClassAPropCount_wRent": {
+                    "type": "integer"
+                },
+                "ClassARentGrowthRank": {
+                    "type": "float"
+                },
+                "ClassARentPerSqFt": {
+                    "type": "float"
+                },
+                "ClassARentPerUnit": {
+                    "type": "float"
+                },
+                "ClassBEffRentGrowth_Unit": {
+                    "type": "float"
+                },
+                "ClassBOccupancyGrowth": {
+                    "type": "float"
+                },
+                "ClassBOccupancyRate": {
+                    "type": "float"
+                },
+                "ClassBPropCount_wRent": {
+                    "type": "integer"
+                },
+                "ClassBRentPerSqFt": {
+                    "type": "float"
+                },
+                "ClassBRentPerUnit": {
+                    "type": "float"
+                },
+                "ClassCDOccupancyRate": {
+                    "type": "float"
+                },
+                "ClassCDPropCount_wRent": {
+                    "type": "integer"
+                },
+                "ClassCDRentPerSqFt": {
+                    "type": "float"
+                },
+                "ClassCDRentPerUnit": {
+                    "type": "float"
+                },
+                "ContractRentWalletShareGrowth": {
+                    "type": "float"
+                },
+                "ContractRentWalletShare_Current": {
+                    "type": "float"
+                },
+                "DecadeBuilt": {
+                    "type": "nested",
+                    "properties": {
+                        "x": {
+                            "type": "long"
+                        },
+                        "y": {
+                            "type": "long"
+                        }
+                    }
+                },
+                "ForRentVacantHouseholdsGrowth": {
+                    "type": "float"
+                },
+                "ForRentVacantHouseholds_Current": {
+                    "type": "float"
+                },
+                "ForecastedPopulation": {
+                    "type": "nested",
+                    "properties": {
+                        "x": {
+                            "type": "long"
+                        },
+                        "y": {
+                            "type": "long"
+                        }
+                    }
+                },
+                "FutureIndustryOpportunity": {
+                    "type": "float"
+                },
+                "GrossRentWalletShareGrowth": {
+                    "type": "float"
+                },
+                "GrossRentWalletShare_Current": {
+                    "type": "float"
+                },
+                "GrossRenttoHHIncomeRatioGrowth": {
+                    "type": "float"
+                },
+                "GrossRenttoHHIncomeRatio_Current": {
+                    "type": "float"
+                },
+                "GrowthPeriod": {
+                    "type": "keyword"
+                },
+                "HSPlusGrowth": {
+                    "type": "float"
+                },
+                "HSPlus_Current": {
+                    "type": "float"
+                },
+                "HomeValueGrowthRank": {
+                    "type": "float"
+                },
+                "HouseholdGrowthRank": {
+                    "type": "float"
+                },
+                "HousingCostWalletShareGrowth": {
+                    "type": "float"
+                },
+                "HousingCostWalletShare_Current": {
+                    "type": "float"
+                },
+                "IncomeGrowthRank": {
+                    "type": "float"
+                },
+                "IndustryGrowthRate": {
+                    "type": "float"
+                },
+                "IndustryVolatility": {
+                    "type": "integer"
+                },
+                "InventoryGrowth": {
+                    "type": "float"
+                },
+                "JobGrowthRank": {
+                    "type": "float"
+                },
+                "K12EnrolledGrowth": {
+                    "type": "float"
+                },
+                "K12Enrolled_Current": {
+                    "type": "float"
+                },
+                "MarketCode": {
+                    "type": "integer"
+                },
+                "MarketEffRentGrowth_Unit": {
+                    "type": "float"
+                },
+                "MarketName": {
+                    "type": "keyword"
+                },
+                "MarketOccRank": {
+                    "type": "float"
+                },
+                "MarketOccupancyGrowth": {
+                    "type": "float"
+                },
+                "MarketOccupancyRate": {
+                    "type": "float"
+                },
+                "MarketOrder": {
+                    "type": "integer"
+                },
+                "MarketPropCount_wRent": {
+                    "type": "integer"
+                },
+                "MarketRank": {
+                    "type": "float"
+                },
+                "MarketRentGrowthRank": {
+                    "type": "float"
+                },
+                "MarketRentPerSqFt": {
+                    "type": "float"
+                },
+                "MarketRentPerUnit": {
+                    "type": "float"
+                },
+                "MedianAgeGrowth": {
+                    "type": "float"
+                },
+                "MedianAge_Current": {
+                    "type": "float"
+                },
+                "MedianContractRentGrowth": {
+                    "type": "float"
+                },
+                "MedianContractRent_Current": {
+                    "type": "float"
+                },
+                "MedianGrossRent1940s_Current": {
+                    "type": "float"
+                },
+                "MedianGrossRent1950s_Current": {
+                    "type": "float"
+                },
+                "MedianGrossRent1960s_Current": {
+                    "type": "float"
+                },
+                "MedianGrossRent1970s_Current": {
+                    "type": "float"
+                },
+                "MedianGrossRent1980s_Current": {
+                    "type": "float"
+                },
+                "MedianGrossRent1990s_Current": {
+                    "type": "float"
+                },
+                "MedianGrossRent2000s_Current": {
+                    "type": "float"
+                },
+                "MedianGrossRent2010s_Current": {
+                    "type": "float"
+                },
+                "MedianGrossRentGrowth": {
+                    "type": "float"
+                },
+                "MedianGrossRentPre1940_Current": {
+                    "type": "float"
+                },
+                "MedianGrossRent_Current": {
+                    "type": "float"
+                },
+                "MedianHHIncomeGrowth": {
+                    "type": "float"
+                },
+                "MedianHHIncome_Current": {
+                    "type": "float"
+                },
+                "MedianHousingValueGrowth": {
+                    "type": "float"
+                },
+                "MedianHousingValue_Current": {
+                    "type": "float"
+                },
+                "MedianMonthlyCostsWithMortgageGrowth": {
+                    "type": "float"
+                },
+                "MedianMonthlyCostsWithMortgage_Current": {
+                    "type": "float"
+                },
+                "MedianOwnerHHIncomeGrowth": {
+                    "type": "float"
+                },
+                "MedianOwnerHHIncome_Current": {
+                    "type": "float"
+                },
+                "MedianOwnerYearBuilt_Current": {
+                    "type": "float"
+                },
+                "MedianRent0BR_Current": {
+                    "type": "float"
+                },
+                "MedianRent1BR_Current": {
+                    "type": "float"
+                },
+                "MedianRent2BR_Current": {
+                    "type": "float"
+                },
+                "MedianRent3BR_Current": {
+                    "type": "float"
+                },
+                "MedianRent4BR_Current": {
+                    "type": "float"
+                },
+                "MedianRenterHHIncomeGrowth": {
+                    "type": "float"
+                },
+                "MedianRenterHHIncome_Current": {
+                    "type": "float"
+                },
+                "MedianRenterYearBuilt_Current": {
+                    "type": "float"
+                },
+                "MedianValue1940s_Current": {
+                    "type": "float"
+                },
+                "MedianValue1950s_Current": {
+                    "type": "float"
+                },
+                "MedianValue1960s_Current": {
+                    "type": "float"
+                },
+                "MedianValue1970s_Current": {
+                    "type": "float"
+                },
+                "MedianValue1980s_Current": {
+                    "type": "float"
+                },
+                "MedianValue1990s_Current": {
+                    "type": "float"
+                },
+                "MedianValue2000s_Current": {
+                    "type": "float"
+                },
+                "MedianValue2010s_Current": {
+                    "type": "float"
+                },
+                "MedianValuePre1940_Current": {
+                    "type": "float"
+                },
+                "MedianValueWithMortgageGrowth": {
+                    "type": "float"
+                },
+                "MedianValueWithMortgage_Current": {
+                    "type": "float"
+                },
+                "MedianYearBuilt": {
+                    "type": "integer"
+                },
+                "MilitaryGrowth": {
+                    "type": "float"
+                },
+                "Military_Current": {
+                    "type": "float"
+                },
+                "NewSupplyNumberProjects": {
+                    "type": "integer"
+                },
+                "NewSupplyNumberUnits": {
+                    "type": "integer"
+                },
+                "NewSupplyRank": {
+                    "type": "float"
+                },
+                "NoCapExMarketRank": {
+                    "type": "float"
+                },
+                "NumberProps_Operating": {
+                    "type": "integer"
+                },
+                "NumberSales": {
+                    "type": "integer"
+                },
+                "NumberSalesChange": {
+                    "type": "float"
+                },
+                "NumberUnits_Operating": {
+                    "type": "integer"
+                },
+                "Order": {
+                    "type": "float"
+                },
+                "OwnerHousingConditions_Current": {
+                    "type": "float"
+                },
+                "PctABRentSpread_SqFt": {
+                    "type": "float"
+                },
+                "PctABRentSpread_Unit": {
+                    "type": "float"
+                },
+                "PctBuiltLast5Years": {
+                    "type": "float"
+                },
+                "PctNewSupply": {
+                    "type": "float"
+                },
+                "PctNewSupply_Combined": {
+                    "type": "float"
+                },
+                "PctPropsPostiveCashflowROI": {
+                    "type": "float"
+                },
+                "PctPropsPostiveValueROI": {
+                    "type": "float"
+                },
+                "PeopleLivinginMFHouseholdGrowth": {
+                    "type": "float"
+                },
+                "PeopleLivinginMFHousehold_Current": {
+                    "type": "float"
+                },
+                "PercentAge20_34_Current": {
+                    "type": "float"
+                },
+                "PercentAge60Plus_Current": {
+                    "type": "float"
+                },
+                "PercentBAPlusEmployed_Current": {
+                    "type": "float"
+                },
+                "PercentBAPlus_Current": {
+                    "type": "float"
+                },
+                "PercentBlueCollar_Current": {
+                    "type": "float"
+                },
+                "PercentHSPlusEmployed_Current": {
+                    "type": "float"
+                },
+                "PercentHSPlus_Current": {
+                    "type": "float"
+                },
+                "PercentMilitary_Current": {
+                    "type": "float"
+                },
+                "PercentPeopleLivinginMFHousehold_Current": {
+                    "type": "float"
+                },
+                "PercentPrivateK12Enrolled_Current": {
+                    "type": "float"
+                },
+                "PercentRemoteRenters_Current": {
+                    "type": "float"
+                },
+                "PercentRenterHouseholds_Current": {
+                    "type": "float"
+                },
+                "PercentSelfEmployed_Current": {
+                    "type": "float"
+                },
+                "PercentWhiteCollar_Current": {
+                    "type": "float"
+                },
+                "PreviousIndustryOpportunity": {
+                    "type": "float"
+                },
+                "PrivateK12EnrolledGrowth": {
+                    "type": "float"
+                },
+                "PrivateK12Enrolled_Current": {
+                    "type": "float"
+                },
+                "Q1ContractRentGrowth": {
+                    "type": "float"
+                },
+                "Q1ContractRent_Current": {
+                    "type": "float"
+                },
+                "Q1HousingValueGrowth": {
+                    "type": "float"
+                },
+                "Q1HousingValue_Current": {
+                    "type": "float"
+                },
+                "Q3ContractRentGrowth": {
+                    "type": "float"
+                },
+                "Q3ContractRent_Current": {
+                    "type": "float"
+                },
+                "Q3HousingValueGrowth": {
+                    "type": "float"
+                },
+                "Q3HousingValue_Current": {
+                    "type": "float"
+                },
+                "RemoteRentersGrowth": {
+                    "type": "float"
+                },
+                "RemoteRenters_Current": {
+                    "type": "float"
+                },
+                "RentEffDate": {
+                    "type": "date"
+                },
+                "RentTrend": {
+                    "type": "nested",
+                    "properties": {
+                        "x": {
+                            "type": "text"
+                        },
+                        "y": {
+                            "type": "text"
+                        }
+                    }
+                },
+                "RenterHouseholdsGrowth": {
+                    "type": "float"
+                },
+                "RenterHouseholds_Current": {
+                    "type": "float"
+                },
+                "RenterHousingConditions_Current": {
+                    "type": "float"
+                },
+                "RentingAgeGrowthRank": {
+                    "type": "float"
+                },
+                "RentvOwnGrowth": {
+                    "type": "float"
+                },
+                "RentvOwn_Current": {
+                    "type": "float"
+                },
+                "SalesEffDate": {
+                    "type": "date"
+                },
+                "SelfEmployedGrowth": {
+                    "type": "float"
+                },
+                "SelfEmployed_Current": {
+                    "type": "float"
+                },
+                "Sub_ABRentSpreadRank_SqFt": {
+                    "type": "integer"
+                },
+                "Sub_CapRateRank": {
+                    "type": "integer"
+                },
+                "Sub_ClassAOccRank": {
+                    "type": "integer"
+                },
+                "Sub_ClassARentGrowthRank": {
+                    "type": "integer"
+                },
+                "Sub_HomeValueGrowthRank": {
+                    "type": "integer"
+                },
+                "Sub_HouseholdGrowthRank": {
+                    "type": "integer"
+                },
+                "Sub_IncomeGrowthRank": {
+                    "type": "integer"
+                },
+                "Sub_JobGrowthRank": {
+                    "type": "integer"
+                },
+                "Sub_MarketOccRank": {
+                    "type": "integer"
+                },
+                "Sub_MarketRank": {
+                    "type": "integer"
+                },
+                "Sub_MarketRentGrowthRank": {
+                    "type": "integer"
+                },
+                "Sub_NewSupplyRank": {
+                    "type": "integer"
+                },
+                "Sub_RentingAgeGrowthRank": {
+                    "type": "integer"
+                },
+                "Sub_WCJobGrowthRank": {
+                    "type": "integer"
+                },
+                "Sub_WalletShareGrowthRank": {
+                    "type": "integer"
+                },
+                "Sub_WalletShareRank": {
+                    "type": "integer"
+                },
+                "SubmarketCode": {
+                    "type": "integer"
+                },
+                "SubmarketName": {
+                    "type": "keyword"
+                },
+                "SubmarketOrder": {
+                    "type": "integer"
+                },
+                "TotalCollarGrowth": {
+                    "type": "float"
+                },
+                "TotalCollar_Current": {
+                    "type": "float"
+                },
+                "TotalHouseholdsGrowth": {
+                    "type": "float"
+                },
+                "TotalHouseholds_Current": {
+                    "type": "float"
+                },
+                "TotalPermitsGrowth": {
+                    "type": "float"
+                },
+                "TotalPopulationGrowth": {
+                    "type": "float"
+                },
+                "TotalPopulation_Current": {
+                    "type": "float"
+                },
+                "Type": {
+                    "type": "integer"
+                },
+                "ValuetoHHIncomeRatioGrowth": {
+                    "type": "float"
+                },
+                "ValuetoHHIncomeRatio_Current": {
+                    "type": "float"
+                },
+                "WCJobGrowthRank": {
+                    "type": "float"
+                },
+                "WalletShareGrowthRank": {
+                    "type": "float"
+                },
+                "WalletShareRank": {
+                    "type": "float"
+                },
+                "WhiteCollarGrowth": {
+                    "type": "float"
+                },
+                "WhiteCollar_Current": {
+                    "type": "float"
+                },
+                "NumberSalesChange_1mo": {
+                    "type": "float"
+                },
+                "NumberSales_1mo": {
+                    "type": "integer"
+                },
+                "ClassANumberProps": {
+                    "type": "integer"
+                },
+                "ClassANumberUnits": {
+                    "type": "integer"
+                },
+                "PctUnitsClassA": {
+                    "type": "float"
+                },
+                "ClassBNumberProps": {
+                    "type": "integer"
+                },
+                "ClassBNumberUnits": {
+                    "type": "integer"
+                },
+                "ClassCDNumberProps": {
+                    "type": "integer"
+                },
+                "ClassCDNumberUnits": {
+                    "type": "integer"
+                },
+                "PctUnitsClassCD": {
+                    "type": "float"
+                },
+                "ClassCDEffRentGrowth_Unit": {
+                    "type": "float"
+                },
+                "ClassCDOccupancyGrowth": {
+                    "type": "float"
+                },
+                "PctBCRentSpread_SqFt": {
+                    "type": "float"
+                },
+                "PctBCRentSpread_Unit": {
+                    "type": "float"
+                },
+                "SVI_Current": {
+                    "type": "float"
+                },
+                "ServiceCollarGrowth": {
+                    "type": "float"
+                },
+                "PercentServiceCollar_Current": {
+                    "type": "float"
+                },
+                "ServiceCollar_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry11_Current": {
+                    "type": "float"
+                },
+                "Industry11_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry21_Current": {
+                    "type": "float"
+                },
+                "Industry21_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry23_Current": {
+                    "type": "float"
+                },
+                "Industry23_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry31_33_Current": {
+                    "type": "float"
+                },
+                "Industry31_33_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry42_Current": {
+                    "type": "float"
+                },
+                "Industry42_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry44_45_Current": {
+                    "type": "float"
+                },
+                "Industry44_45_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry48_49_Current": {
+                    "type": "float"
+                },
+                "Industry48_49_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry22_Current": {
+                    "type": "float"
+                },
+                "Industry22_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry51_Current": {
+                    "type": "float"
+                },
+                "Industry51_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry52_Current": {
+                    "type": "float"
+                },
+                "Industry52_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry53_Current": {
+                    "type": "float"
+                },
+                "Industry53_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry54_Current": {
+                    "type": "float"
+                },
+                "Industry54_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry55_Current": {
+                    "type": "float"
+                },
+                "Industry55_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry56_Current": {
+                    "type": "float"
+                },
+                "Industry56_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry61_Current": {
+                    "type": "float"
+                },
+                "Industry61_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry62_Current": {
+                    "type": "float"
+                },
+                "Industry62_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry71_Current": {
+                    "type": "float"
+                },
+                "Industry71_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry72_Current": {
+                    "type": "float"
+                },
+                "Industry72_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry81_Current": {
+                    "type": "float"
+                },
+                "Industry81_Current": {
+                    "type": "float"
+                },
+                "PercentIndustry92_Current": {
+                    "type": "float"
+                },
+                "Industry92_Current": {
+                    "type": "float"
+                },
+                "PercentIndustryLowRisk_Current": {
+                    "type": "float"
+                },
+                "IndustryLowRisk_Current": {
+                    "type": "float"
+                },
+                "PercentIndustryMediumRisk_Current": {
+                    "type": "float"
+                },
+                "IndustryMediumRisk_Current": {
+                    "type": "float"
+                },
+                "PercentIndustryHighRisk_Current": {
+                    "type": "float"
+                },
+                "IndustryHighRisk_Current": {
+                    "type": "float"
+                },
+                "PctUnitsClassB": {
+                    "type": "float"
+                }
+            }
+        }
+    }
+}

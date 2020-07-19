@@ -1,0 +1,64 @@
+version: '3'
+services:
+    mysql:
+        env_file: .env
+        image: mysql:5.7
+        ports:
+            - 5218:3306
+        network_mode: bridge
+        expose:
+            - 3306
+            - 5218
+        container_name: mysql-container
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.7.0
+        container_name: elasticsearch
+        network_mode: bridge
+        environment:
+            - cluster.name=docker-cluster
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        ports:
+            - "9200:9200"
+    redis:
+        image: redis:2.8
+        ports:
+            - 6379:6379
+        network_mode: bridge
+        restart: always
+        container_name: redis-container
+        env_file: .env
+        expose:
+            - 6379
+    backend-app:
+        image: tech390/atclass-node:v0.01
+        build: 
+            dockerfile: Dockerfile.dev
+            context: ./
+        depends_on:
+            - elasticsearch
+            - redis
+            - mysql
+        links:
+            - elasticsearch
+            - redis
+            - mysql
+        env_file: .env
+        network_mode: bridge
+        environment:
+            - ES_HOST=elasticsearch
+            - ES_PORT=9200
+            - ES_PROTO=http
+            - NODE_ENV=development
+        ports: 
+            - "3000:3000"
+        volumes: 
+            - /usr/app/node_modules
+            - .:/usr/app
+        container_name: atclass-node-container
+        # command: npm run nodemon
+

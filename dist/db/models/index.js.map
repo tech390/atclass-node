@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/db/models/index.js"],"names":["backendmysqlData"],"mappings":";;;;;;;AAAA;;;;;;QACSA,gB,GAAAA,0B","file":"index.js","sourcesContent":["import backendmysqlData from './backend-mysqlData';\r\nexport { backendmysqlData };\r\n\r\n"]}
