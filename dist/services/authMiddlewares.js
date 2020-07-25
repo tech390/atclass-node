@@ -14,12 +14,8 @@ var _jwtDecode2 = _interopRequireDefault(_jwtDecode);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var auth = function auth(req, res, next) {
-    try {
-        console.log('=========== header  >>>>>>>>>', req.headers);
-        next();
-    } catch (error) {
-        _log.Log.info('Error in auth middleware ', error);
-    }
+    console.log('=========== header  >>>>>>>>>', req.header);
+    next();
 };
 
 exports.auth = auth;

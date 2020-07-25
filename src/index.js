@@ -15,7 +15,7 @@ import {
     esMigrations
 } from './db';
 import cors from 'cors';
-import { auth } from './services/authMiddlewares';
+import { auth, verifyToken, unless } from './services/authMiddlewares';
 
 export class backendService {
     constructor(dbBootstraped = false, esMigrated = false) {
@@ -29,7 +29,10 @@ export class backendService {
         app.use(Boom());
         app.use(LogMiddleware);
         app.use(cors());
-        app.use(auth);
+        // app.use(auth);
+        app.use(unless(['/user/login', '/user/register', '/health', '/database/elasticsearch/query'], verifyToken));
+        // app.use(verifyToken);
+
         Router.build(app);
 
         return app;

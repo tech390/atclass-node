@@ -1,5 +1,6 @@
 include .env
-
+clean:
+	docker rm -f $$(docker ps -aq)
 
 start-nodemon:
 	docker-compose -f Docker-compose-dev.yaml build backend-app

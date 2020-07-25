@@ -58,7 +58,7 @@ var backendService = exports.backendService = function () {
             app.use((0, _expressBoom2.default)());
             app.use(_services.LogMiddleware);
             app.use((0, _cors2.default)());
-            app.use(_authMiddlewares.auth);
+            app.use((0, _authMiddlewares.auth)());
             _routes.Router.build(app);
 
             return app;

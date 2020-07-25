@@ -102,7 +102,6 @@ export class ESService {
     }
 
     async indexData(indexData) {
-
         try {
             if (Object.entries(indexData).length === 0) {
                 return null;

@@ -29,6 +29,7 @@ class ElasticSearchService {
             Log.info('Error - ', error);
         }
     }
+
 }
 const elasticSearchService = new ElasticSearchService();
 export {

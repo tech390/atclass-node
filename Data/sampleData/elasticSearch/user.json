@@ -1,0 +1,24 @@
+[
+    {
+        "userName": "Naruto",
+        "mailID": "Naruto@gmail.com",
+        "mobileNumber": 987,
+        "age": 18,
+        "class": "Team7",
+        "university": "leaf",
+        "college": "leaf",
+        "school": "leaf",
+        "sex": "male",
+        "branch": "ninja",
+        "yearOfPassOut": "2015",
+        "StudyGroup": "chakra",
+        "degree": "jonin",
+        "password": "naruto360",
+        "rollNumber": "3",
+        "bio": "9-take fox spirit inside me",
+        "dateOfbirth": "2002-01-01",
+        "registeredDate": "2020-07-20",
+        "instituteLocation": "japan",
+        "residenceLocation": "leaf village"
+    }
+]

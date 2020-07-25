@@ -21,30 +21,18 @@ var ElasticSearchService = function () {
     _createClass(ElasticSearchService, [{
         key: 'query',
         value: function query(index, _query) {
-            try {
-                return _esService.esService.search(index, _query);
-            } catch (error) {
-                _log.Log.info('Error - ', error);
-            }
+            return _esService.esService.search(index, _query);
         }
     }, {
         key: 'getSchema',
         value: async function getSchema(index) {
-            try {
-                var data = await _esService.esService.getSchema(index);
-                return data;
-            } catch (error) {
-                _log.Log.info('Error - ', error);
-            }
+            var data = await _esService.esService.getSchema(index);
+            return data;
         }
     }, {
         key: 'deleteIndex',
         value: function deleteIndex(index) {
-            try {
-                return _esService.esService.deleteIndex(index);
-            } catch (error) {
-                _log.Log.info('Error - ', error);
-            }
+            return _esService.esService.deleteIndex(index);
         }
     }]);
 

@@ -12,19 +12,6 @@ import { Log } from '../services/log'
 
 const router = new Router();
 
-router.get('/elasticsearch', (req, res) => {
-    try {
-        let response = {
-            status: 'AtClass elasticsearch db'
-        }
-        return res.send(response);
-    } catch (error) {
-        Log.info('Error - ', error);
-        res.boom.badData(error);
-    }
-
-});
-
 router.get('/redis', async (req, res) => {
     try {
         let response = {
