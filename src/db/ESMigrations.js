@@ -1,7 +1,7 @@
 import fs from 'fs';
 import {
     Log
-} from '../services';
+} from '../utils';
 import { client } from './esclient';
 import path from 'path';
 class ESMigrations {

@@ -2,7 +2,7 @@
 
 var _baseMigrations = require('./base/baseMigrations');
 
-var _log = require('../../services/log');
+var _log = require('../../utils/log');
 
 exports.up = async function up(knex, Promise) {
     var tableExists = await knex.schema.hasTable('mysql_metadata');

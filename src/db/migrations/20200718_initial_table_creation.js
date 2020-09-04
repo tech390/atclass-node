@@ -3,7 +3,7 @@ import {
 } from './base/baseMigrations';
 import {
     Log
-} from '../../services/log';
+} from '../../utils/log';
 
 exports.up = async function up(knex, Promise) {
     let tableExists = await knex.schema.hasTable('mysql_metadata');

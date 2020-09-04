@@ -1,9 +1,8 @@
-import {
-    Log
-} from './log';
-import { esService } from './esService';
+import { Log } from '../utils/log';
+import { esService } from '../utils/esService';
 import bodybuilder from 'bodybuilder';
 import { v4 as uuidv4 } from 'uuid';
+import { response } from 'express';
 
 class UserCredentials {
     async isCredentialsUnique(userDetails) {
@@ -17,12 +16,12 @@ class UserCredentials {
                                     'should': [
                                         {
                                             'match': {
-                                                'mailID': userDetails.mailID
+                                                'mailID.raw': userDetails.mailID
                                             }
                                         },
                                         {
                                             'match': {
-                                                'userName': userDetails.userName
+                                                'userName.raw': userDetails.userName
                                             }
                                         },
                                         {
@@ -39,12 +38,12 @@ class UserCredentials {
                 'aggs': {
                     'UniqueMailID': {
                         'terms': {
-                            'field': 'mailID'
+                            'field': 'mailID.raw'
                         }
                     },
                     'UniqueUserName': {
                         'terms': {
-                            'field': 'userName'
+                            'field': 'userName.raw'
                         }
                     },
                     'UniquemobileNumber': {
@@ -54,10 +53,8 @@ class UserCredentials {
                     }
                 }
             };
-            console.log(JSON.stringify(query, undefined, 2));
             let res = await esService.search('atclass-usercredentials', query);
-            console.log('res', JSON.stringify(res, undefined, 2));
-
+            // console.log('res', JSON.stringify(res, undefined, 2));
             if (res.hits.total) {
                 if (res.aggregations.UniqueMailID.buckets.length !== 0) {
                     return {
@@ -77,7 +74,7 @@ class UserCredentials {
                 }
             } else {
                 await esService.indexData({
-                    id: uuidv4(),
+                    id: payload.mailID.split('@')[0] + payload.userName,
                     index: 'atclass-usercredentials',
                     type: 'usercredentials',
                     body: {
@@ -151,6 +148,42 @@ class UserCredentials {
                 return {
                     validUser: false
                 }
+            }
+        } catch (err) {
+            Log.info('Error in userCredentials - validUser ', err);
+            throw err;
+        }
+    }
+    async followRequest(payload) {
+        try {
+            let query = {};
+            let index = 'atclass-usercredentials', type = 'usercredentials', id = '', body = {};
+            if (payload.cancelRequest) {
+                // await esService
+            } else if (payload.requesteeAccepted) {
+                await esService.update(index, type, id, body)
+            } else {
+                id = payload.followRequestortMailID.split('@')[0] + payload.followRequestorUserName
+                body.doc = {
+                    following: {
+                        userName: payload.requesteeUserName,
+                        mailID: payload.requesteeMailID,
+                        accepted: false,
+                        timeStamp: date.getTime()
+                    }
+                }
+                await esService.update(index, type, id, body)
+                id = payload.requesteeMailID.split('@')[0] + payload.requesteeUserName
+                body.doc = {
+                    followers: {
+                        userName: payload.followRequestorUserName,
+                        mailID: payload.followRequestortMailID,
+                        accepted: false,
+                        timeStamp: date.getTime()
+                    }
+                }
+                await esService.update(index, type, id, body)
+                return true;
             }
         } catch (err) {
             Log.info('Error in userCredentials - validUser ', err);

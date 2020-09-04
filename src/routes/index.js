@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { LogMiddleware, Log } from '../services'
+import { LogMiddleware, Log } from '../utils'
 export const Router = {
     build(app) {
         const routes = fs.readdirSync(__dirname)

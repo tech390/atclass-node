@@ -9,13 +9,13 @@ import {
 import {
     LogMiddleware,
     Log
-} from './services';
+} from './utils';
 import {
     dbBootstrap,
     esMigrations
 } from './db';
 import cors from 'cors';
-import { auth, verifyToken, unless } from './services/authMiddlewares';
+import { auth, verifyToken, unless } from './utils/authMiddlewares';
 
 export class backendService {
     constructor(dbBootstraped = false, esMigrated = false) {
@@ -104,14 +104,16 @@ export class backendService {
         });
 
         await this.waitFnc();
+        console.log('10 sec completed');
+
+        if (!this.esMigrated) {
+            await this.initESMigrations();
+        }
 
         if (!this.dbBootstraped) {
             await this.initDB();
         }
 
-        if (!this.esMigrated) {
-            await this.initESMigrations();
-        }
         if (
             this.env === 'development' ||
             this.env === 'testing' ||
@@ -137,12 +139,12 @@ export class backendService {
     }
 
 
-    waitFnc() {
+    async waitFnc() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                console.log('waiting for 3 sec');
-                resolve("3 sec");
-            }, 3000)
+                console.log('waiting for 10 sec');
+                resolve("10 sec");
+            }, 10000)
         });
     }
 

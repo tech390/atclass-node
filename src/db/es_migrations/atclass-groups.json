@@ -9,8 +9,86 @@
     "mappings": {
         "groups": {
             "properties": {
-                "age": {
-                    "type": "float"
+                "userName": {
+                    "type": "text",
+                    "fields": {
+                        "raw": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                        }
+                    }
+                },
+                "mailID": {
+                    "type": "text",
+                    "fields": {
+                        "raw": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                        }
+                    }
+                },
+                "mobileNumber": {
+                    "type": "long"
+                },
+                "groupName": {
+                    "type": "text",
+                    "fields": {
+                        "raw": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                        }
+                    }
+                },
+                "groupBio": {
+                    "type": "keyword"
+                },
+                "groupType": {
+                    "type": "keyword"
+                },
+                "timeStamp": {
+                    "type": "date"
+                },
+                "groupMember": {
+                    "type": "nested",
+                    "properties": {
+                        "userName": {
+                            "type": "text",
+                            "fields": {
+                                "raw": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                }
+                            }
+                        },
+                        "mailID": {
+                            "type": "keyword"
+                        },
+                        "timeStamp": {
+                            "type": "date"
+                        },
+                        "addedBy": {
+                            "userName": {
+                                "type": "keyword"
+                            },
+                            "mailID": {
+                                "type": "keyword"
+                            }
+                        }
+                    }
+                },
+                "groupOwners": {
+                    "type": "nested",
+                    "properties": {
+                        "userName": {
+                            "type": "keyword"
+                        },
+                        "mailID": {
+                            "type": "keyword"
+                        },
+                        "timeStamp": {
+                            "type": "date"
+                        }
+                    }
                 }
             }
         }

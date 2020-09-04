@@ -1,6 +1,6 @@
 import {
     Log
-} from '../../../services/log';
+} from '../../../utils/log';
 import backendmysqlData from '../../models/backend-mysqlData';
 import jsonfile from 'jsonfile';
 import path from 'path';

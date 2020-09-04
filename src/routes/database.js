@@ -6,8 +6,8 @@ import {
     elasticSearchService
 } from '../services/elasticSearchService';
 import knex from '../db/knex';
-import { redisHelper } from '../services/redisHelper';
-import { Log } from '../services/log'
+import { redisHelper } from '../utils/redisHelper';
+import { Log } from '../utils/log'
 
 
 const router = new Router();

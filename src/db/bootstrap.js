@@ -1,7 +1,7 @@
 import knex from './knex';
 import {
     Log
-} from '../services';
+} from '../utils';
 
 export class Bootstrap {
     async run() {
